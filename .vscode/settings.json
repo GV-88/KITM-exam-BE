@@ -1,0 +1,14 @@
+{
+	"eslint.validate": ["javascript"],
+	"eslint.format.enable": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.insertSpaces": false,
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"javascript.preferences.quoteStyle": "double",
+	"prettier.singleQuote": false
+}
