@@ -1,0 +1,56 @@
+# this should match config.env
+@url = http://localhost:3000/api/v1
+@admintoken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWQyMGNhMzk2YTcyZDllZDI5ODZiMSIsImlhdCI6MTc0MzU5MzcxNywiZXhwIjoxNzQzNjM2OTE3fQ.oH1lwq-yGq_f72-o_P06rVaMDaeurQHQfIGX4pL09dY
+@peasanttoken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWQxZTU3YjkyNWUxYTk0MmYzZmMyNCIsImlhdCI6MTc0MzU5MzA0NywiZXhwIjoxNzQzNjM2MjQ3fQ.forZSFguGCJY20Qffy0bKuzEdAtZ9qYNB4u4WrPVGSA
+
+###
+# register
+POST {{url}}/register HTTP/1.1
+content-type: application/json
+
+{
+	"username": "user3",
+	"password": "helloworld",
+	"confirmPassword": "helloworld"
+}
+
+###
+# login
+POST {{url}}/login HTTP/1.1
+content-type: application/json
+
+{
+	"username": "user3",
+	"password": "helloworld"
+}
+
+###
+# get users
+GET {{url}}/users HTTP/1.1
+Authorization: Bearer: {{admintoken}}
+
+###
+# create event
+POST {{url}}/events HTTP/1.1
+content-type: application/json
+Authorization: Bearer: {{admintoken}}
+
+{
+	"name": "event4"
+}
+
+###
+# get events
+GET {{url}}/events HTTP/1.1
+Authorization: Bearer: {{admintoken}}
+
+###
+# get single event by id
+GET {{url}}/events/67ed1fc5b925e1a942f3fc2c HTTP/1.1
+Authorization: Bearer: {{admintoken}}
+
+###
+# get single event by id
+DELETE {{url}}/events/67ed1fc5b925e1a942f3fc2c HTTP/1.1
+Authorization: Bearer: {{admintoken}}
+
